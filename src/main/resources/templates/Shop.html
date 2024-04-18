@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VELM.co</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleShop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#" class="logo">VELM.co</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Shop.html">Products</a></li>  
+                        <li><a href="">Contact Us</a></li> 
+                        <li><a href="">My Account</a></li>
+                    </ul>
+                </nav>
+                <div class="search">
+                    <span class="icon">
+                        <box-icon name='search-alt-2' class = "searchBtn"></box-icon>
+                        <box-icon name='x' class="closeBtn"></box-icon>
+                    </span>
+                </div>
+                <div class="searchbox">
+                    <input type="text" placeholder="Search Here...">
+                </div>
+                <div class="cart">
+                    <a href="#"><box-icon name='shopping-bag'></box-icon></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        let searchBtn = document.querySelector('.searchBtn');
+        let closeBtn = document.querySelector('.closeBtn');
+        let searchbox = document.querySelector('.searchbox');
+
+        searchBtn.onclick = function(){
+            searchbox.classList.add('active');
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('active');
+        }
+        closeBtn.onclick = function(){
+            searchbox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('active');
+        }
+    </script>
+    <h1>Shop our products:</h1>
+    <main>
+        
+        <div class="card1">
+            <div class="image">
+                <img src="Images/blue sweats.jpg" alt="">
+            </div>
+            <div class="caption">
+                <p class="rate">
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                </p>
+                <p class="productName">Classic Sweatpants</p>
+                <p class="price">$30.00</p>
+            </div>
+            <button class="buy">Buy Now</button>
+            
+        </div>
+        <div class="card2">
+            <div class="image">
+                <img src="Images/grey sweater.jpg" alt="">
+            </div>
+            <div class="caption">
+                <p class="rate">
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                </p>
+                <p class="productName">Sweater</p>
+                <p class="price">$25.00</p>
+            </div>
+            <button class="buy">Buy Now</button>
+            
+        </div>
+        <div class="card3">
+            <div class="image">
+                <img src="Images/orange shorts.jpg" alt="">
+            </div>
+            <div class="caption">
+                <p class="rate">
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                </p>
+                <p class="productName">Women's Shorts</p>
+                <p class="price">$30.00</p>
+            </div>
+            <button class="buy">Buy Now</button>
+            
+        </div>
+    </main>
+    
+    
+</body>
+</html>
