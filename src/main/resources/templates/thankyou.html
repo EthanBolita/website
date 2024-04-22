@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Page</title>
+    <link rel="stylesheet" href="styleforthankyou.css">
+</head>
+<body>
+    <h1>Thank You!</h1>
+    <p>Thank you for logging in, <span th:text="${name}"></span>!</p>
+    <button onclick="goToHomePage()">Go to Home Page</button>
+
+    <script>
+        function goToHomePage() {
+            window.location.href = "/index"; // Adjust this URL to match your home page mapping
+        }
+    </script>
+</body>
+</html>
