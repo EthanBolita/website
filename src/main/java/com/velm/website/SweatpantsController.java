@@ -1,9 +1,13 @@
 /**
- * This is the SweatpantsController class, which
- * @ authors: Ethan
- * @ date of oldest edition: April 17 
- * @ version: 2 
+ * SweatpantsController: This controller class takes any input from any 
+ * of the buttons that reference the endpoint of sweatpants.html, once it gets that
+ * request it takes you to the sweatpants.html which shows the html page for the sweatpants product
+ * @Ethan
+ * @ 4/15
+ * @ Version 2
  */
+
+
 package com.velm.website;
 
 import org.springframework.stereotype.Controller;
@@ -14,6 +18,6 @@ public class SweatpantsController {
 
     @GetMapping("/sweaptants")
     public String sweaptantsPage() {
-        return "sweatpants"; // Assuming "sweaptants.html" is in the templates directory
+        return "sweatpants"; 
     }
 }

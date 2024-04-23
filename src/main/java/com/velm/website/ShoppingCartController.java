@@ -1,3 +1,10 @@
+/**
+ * ShoppingCartController: This controller class takes any input from any 
+ * of the buttons that reference the endpoint of sshoppingcart.html and sbows the shopping cart.html page
+ * @Ethan
+ * @ 4/15
+ * @ Version 2
+ */
 package com.velm.website;
 
 import org.springframework.stereotype.Controller;
