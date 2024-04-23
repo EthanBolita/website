@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ShopController {
 
+    // List of products
+    private String[] products = {"Classic Sweatpants", "Sweater", "Women's Shorts"};
+
     @GetMapping("/Shop")
     public String shopPage() {
         return "Shop"; // Assuming "shop.html" is in the templates directory
