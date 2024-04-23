@@ -1,3 +1,9 @@
+/**
+ * This is the ShopController class, which
+ * @ authors: Ethan
+ * @ date of oldest edition: April 17 
+ * @ version: 2 
+ */
 package com.velm.website;
 
 import org.springframework.stereotype.Controller;
