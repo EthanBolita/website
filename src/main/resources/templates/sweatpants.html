@@ -175,6 +175,23 @@
                     <input type="number" value="1">
                     <button class="cartBtn">Add to Cart</button>
                     <h4 class="prodDetails">Product Details</h4>
+                    <script>
+                        document.getElementById('cartForm').addEventListener('submit', function(event) {
+                            // Prevent the default form submission
+                            event.preventDefault();
+                    
+                            // Get selected size and color
+                            var selectedSize = document.getElementById('sizes').value;
+                            var selectedColor = document.getElementById('color').value;
+                    
+                            // Set the values of hidden input fields
+                            document.getElementById('selectedSize').value = selectedSize;
+                            document.getElementById('selectedColor').value = selectedColor;
+                    
+                            // Submit the form
+                            this.submit();
+                        });
+                    </script>
                     <span>These cargo style sweatpants with elastic waistband and tapered ankle are made for warmth and style.</span>
                 </div>
             </div>
