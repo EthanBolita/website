@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+<style>
+    .spropduct{
+        margin-left: 10%;
+        padding-top: 5%;
+    }
+    .col-1{
+        padding: 10% 5%;
+    
+        display: grid;
+        place-items: center;
+    }
+    .col-2{
+        padding: 10% 5%;
+    
+        display: grid;
+        place-items: center;
+    }
+    .small-img-group{
+        display: flex;
+        
+    }
+    .small-img-col{
+        flex-basis: 22%;
+        margin-right:-5%;
+        
+        cursor: pointer;
+    }
+    .details{
+        
+        scale: 150%;
+        margin-left: -80%;
+       
+        
+    }
+    .prodDetails{
+        margin-left: 1%;
+        
+    }
+    .prodName{
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+    .spropduct select.sizes{
+        display: block;
+        padding: 5px 10px;
+    }
+    .spropduct input{
+        width: 50px;
+        padding-left: 10px;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .cartBtn{
+    display: inline-block;
+    background: #000000;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 15px 0;
+    border-radius: 10px;
+    transition: background 0.5s;
+    }
+    .cartBtn:hover{
+    background: #563434;
+    }
+</style>
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#" class="logo">VELM.co</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Shop.html">Products</a></li> 
+                        <li><a href="">Contact Us</a></li> 
+                        <li><a href="">My Account</a></li>
+                    </ul>
+                </nav>
+                <div class="search">
+                    <span class="icon">
+                        <box-icon name='search-alt-2' class = "searchBtn"></box-icon>
+                        <box-icon name='x' class="closeBtn"></box-icon>
+                    </span>
+                </div>
+                <div class="searchbox">
+                    <input type="text" placeholder="Search Here...">
+                </div>
+                <div class="cart">
+                    <a href="#"><box-icon name='shopping-bag'></box-icon></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        let searchBtn = document.querySelector('.searchBtn');
+        let closeBtn = document.querySelector('.closeBtn');
+        let searchbox = document.querySelector('.searchbox');
+
+        searchBtn.onclick = function(){
+            searchbox.classList.add('active');
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('active');
+        }
+        closeBtn.onclick = function(){
+            searchbox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('active');
+        }
+    </script>
+
+    <section class="spropduct">
+        
+        <div class="row">
+            <div class="col-1">
+                <div class="mainpic">
+                    <img src="Images/greyhoodie.jpg" id="mainpic"
+                    width="50%"
+                    height="100%">
+                </div>
+                
+
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="Images/greyhoodie.jpg" class="small-img"
+                        width="70%"
+                        >
+                    </div>
+                    <div class="small-img-col">
+                        <img src="Images/black sweater.jpg" class="small-img"
+                        width="70%"
+                        >
+                    </div>
+                    <div class="small-img-col">
+                        <img src="Images/redhoodie.jpg" class="small-img"
+                        width="70%"
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                
+                <div class="details">
+                    <h6>Home / Hoodie </h6>
+                    <h3 class="prodName">Unisex Hoodie</h3>
+                    <h2>$49.99</h2>
+                    <select name="sizes" id="sizes">
+                        <option>Select Size</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                    </select>
+                    <select name="color" id="color">
+                        <option>Select Color</option>
+                        <option>Grey</option>
+                        <option>Black</option>
+                        <option>Red</option>
+                    </select>
+                    <input type="number" value="1">
+                    <button class="cartBtn">Add to Cart</button>
+                    <h4 class="prodDetails">Product Details</h4>
+                    <script>
+                        document.getElementById('cartForm').addEventListener('submit', function(event) {
+                            // Prevent the default form submission
+                            event.preventDefault();
+                    
+                            // Get selected size and color
+                            var selectedSize = document.getElementById('sizes').value;
+                            var selectedColor = document.getElementById('color').value;
+                    
+                            // Set the values of hidden input fields
+                            document.getElementById('selectedSize').value = selectedSize;
+                            document.getElementById('selectedColor').value = selectedColor;
+                    
+                            // Submit the form
+                            this.submit();
+                        });
+                    </script>
+                    <span>Heavyweight and soft 80% cotton 20% polyester fleece hoodie features flexible rib side panels, front kangaroo pocket, and silcone label on wearer's left wrist. <br>
+                        Perfect blend of comfort and style.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var mainpic = document.getElementById('mainpic');
+        var smallpic = document.getElementsByClassName('small-img');
+
+        smallpic[0].onclick = function(){
+            mainpic.src=smallpic[0].src;
+        }
+        smallpic[1].onclick = function(){
+            mainpic.src=smallpic[1].src;
+        }
+        smallpic[2].onclick = function(){
+            mainpic.src=smallpic[2].src;
+        }
+    </script>
+</body>
+</html>
