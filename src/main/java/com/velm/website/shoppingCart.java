@@ -3,9 +3,22 @@ package com.velm.website;
 import java.util.ArrayList;
 
 public class shoppingCart {
-    ArrayList<product> products= new ArrayList<product>();
-    double totalCost=0;
+  private static shoppingCart instance = null;
+  private ArrayList<product> products = new ArrayList<product>();
+  private double totalCost = 0;
   
+
+  // Private constructor to restrict instantiation
+  private shoppingCart() {}
+
+
+  // Method to get the singleton instance
+    public static shoppingCart getInstance() {
+        if (instance == null) {
+            instance = new shoppingCart();
+        }
+        return instance;
+    }
     /**
      * addToCartethod: it takes in a product and adds it to the object's
      * products arraylist, and increases the object's totalCost variable.
@@ -21,15 +34,15 @@ public class shoppingCart {
      * products arraylist, and decreases the totalCost variable.
      */
   
-    public void remove(product item){
-      for(int i=0; i<products.size();i++){
-        if(products.get(i).getType()==item.getType()){
-          totalCost-=products.get(i).getPrice();
-          products.remove(i);
-          totalCost= (double) Math.round(totalCost * 100) / 100;
-        }
+     public void remove(product item){
+      int index = products.indexOf(item);
+      if(index != -1){
+        totalCost -= products.get(index).getPrice();
+        products.remove(index);
+        totalCost = (double) Math.round(totalCost * 100) / 100;
       }
     }
+    
   
     
     /** 
