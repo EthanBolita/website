@@ -1,10 +1,11 @@
 /**
- * ShoppingCartController: This controller class takes any input from any 
- * of the buttons that reference the endpoint of sshoppingcart.html and sbows the shopping cart.html page
- * @Ethan
- * @ 4/15
- * @ Version 2
+ * This is the SweatpantsController class, which
+ * @ authors: Ethan
+ * @ date of oldest edition: April 17 
+ * @ version: 2 
  */
+
+
 package com.velm.website;
 
 import org.springframework.stereotype.Controller;
