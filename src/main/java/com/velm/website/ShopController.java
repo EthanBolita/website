@@ -27,6 +27,8 @@ public class ShopController {
         put("Classic Sweatpants", "$30.00");
         put("Sweater", "$25.00");
         put("Women's Shorts", "$30.00");
+        put("shirt", "$30.00");
+
     }};
 
     @GetMapping("/Shop")
