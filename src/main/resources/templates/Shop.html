@@ -1,14 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>VELM.co</title>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleShop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<style>
     
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:darkgrey;
+}
+body{
+    font-family: "Oswald", sans-serif;
+  
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display:inline-block ;
+    list-style-type: none;
+    size: 250px;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color:#555
+}
+p{
+    color: #555;
+}
+.btn{
+    display: inline-block;
+    background: #000000;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.btn:hover{
+ background: #563434;
+}
+    main{
+    max-width: 1500px;
+    width: 95%;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+main .card1{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card1 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card1 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card1 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card1 .caption p{
+    font-size: 1rem;
+}
+
+main .card2{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card2 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card2 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card2 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card2 .caption p{
+    font-size: 1rem;
+}
+main .card3{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card3 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card3 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card3 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card3 .caption p{
+    font-size: 1rem;
+}
+main .card4{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card4 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card4 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card4 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card4 .caption p{
+    font-size: 1rem;
+}
+main .card5{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card5 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card5 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card5 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card5 .caption p{
+    font-size: 1rem;
+}
+.buynowBtn{
+    display: inline-block;
+    background: #000000;
+    color: #fff;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.buynowBtn:hover{
+ background: #563434;
+}
+</style>
 </head>
 <body>
     <div class="header">
@@ -75,8 +296,7 @@
                 <p class="productName">Classic Sweatpants</p>
                 <p class="price">$30.00</p>
             </div>
-            <a href="sweaptants" class="buy">Buy Now</a>
-
+            <a href="Shop Sweatpants.html" class="buynowBtn">Buy Now Now&#8594</a>
             
         </div>
         <div class="card2">
@@ -94,8 +314,7 @@
                 <p class="productName">Sweater</p>
                 <p class="price">$25.00</p>
             </div>
-            <button class="buy">Buy Now</button>
-            
+            <a href="Shop Sweatpants.html" class="buynowBtn">Buy Now Now&#8594</a>            
         </div>
         <div class="card3">
             <div class="image">
@@ -112,7 +331,24 @@
                 <p class="productName">Women's Shorts</p>
                 <p class="price">$30.00</p>
             </div>
-            <button class="buy">Buy Now</button>
+            <a href="Shop Sweatpants.html" class="buynowBtn">Buy Now Now&#8594</a>            
+        </div>
+        <div class="card4">
+            <div class="image">
+                <img src="Images/greenshirt.jpg" alt="">
+            </div>
+            <div class="caption">
+                <p class="rate">
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                    <box-icon type='solid' name='star'></box-icon>
+                </p>
+                <p class="productName">Women's Shorts</p>
+                <p class="price">$30.00</p>
+            </div>
+            <a href="Shop Sweatpants.html" class="buynowBtn">Buy Now Now&#8594</a>
             
         </div>
     </main>

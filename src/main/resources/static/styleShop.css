@@ -1,0 +1,168 @@
+main{
+    max-width: 1500px;
+    width: 95%;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+main .card1{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card1 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card1 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card1 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card1 .caption p{
+    font-size: 1rem;
+}
+
+main .card2{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card2 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card2 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card2 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card2 .caption p{
+    font-size: 1rem;
+}
+main .card3{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card3 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card3 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card3 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card3 .caption p{
+    font-size: 1rem;
+}
+main .card4{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card4 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card4 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card4 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card4 .caption p{
+    font-size: 1rem;
+}
+main .card5{
+    max-width: 200px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+main .card5 .image{
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+main .card5 .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .card5 .caption{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 1em;
+    height: 25%;
+}
+main .card5 .caption p{
+    font-size: 1rem;
+}
+.buynowBtn{
+    display: inline-block;
+    background: #000000;
+    color: #fff;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.buynowBtn:hover{
+ background: #563434;
+}
