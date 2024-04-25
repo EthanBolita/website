@@ -10,7 +10,7 @@ public class addToCart {
 
     @PostMapping("/AddToCartServlet")
     @ResponseBody
-    public String addToCart(
+    public String addProductToCart(
             @RequestParam("productName") String productName,
             @RequestParam("productPrice") double productPrice,
             @RequestParam("sizes") String selectedSize,
@@ -19,9 +19,11 @@ public class addToCart {
         // Create a product object
         product product = new product(productName, productPrice, selectedSize, selectedColor);
 
+        // Get the shopping cart instance
+        shoppingCart cart = shoppingCart.getInstance();
+
         // Add the product to the shopping cart
-        //shoppingCart cart = shoppingCart.getInstance(); // Assuming you have a ShoppingCart singleton
-        //cart.addToCart(product);
+        cart.addToCart(product);
 
         // Return response
         return "Product added to cart successfully!";
