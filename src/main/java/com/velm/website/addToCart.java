@@ -20,8 +20,8 @@ public class addToCart {
         product product = new product(productName, productPrice, selectedSize, selectedColor);
 
         // Add the product to the shopping cart
-        shoppingCart cart = shoppingCart.getInstance(); // Assuming you have a ShoppingCart singleton
-        cart.addToCart(product);
+        //shoppingCart cart = shoppingCart.getInstance(); // Assuming you have a ShoppingCart singleton
+        //cart.addToCart(product);
 
         // Return response
         return "Product added to cart successfully!";
