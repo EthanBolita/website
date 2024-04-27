@@ -1,9 +1,8 @@
-/**
- * This is the LoginController class, which
- * @ authors: Ethan
- * @ date of oldest edition: April 17 
- * @ version: 2 
- */
+/** This is the LoginController class, which
+* @ authors: Ethan
+* @ date of oldest edition: April 17 
+* @ version: 2 
+*/
 
 
 package com.velm.website;
@@ -18,31 +17,31 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class LoginController {
 
-    @GetMapping("/login")
-    public String loginForm() {
-        return "login";
-    }
+   @GetMapping("/login")
+   public String loginForm() {
+       return "login";
+   }
 /**
- * This post request is taken from login and needs paramter name
- * and once it gets that name, it takes you to the thankyou.html page
- * @param name
- * @param model
- * @param redirectAttributes
- * @return
- */
-    @PostMapping("/login")
-    public String loginSubmit(@RequestParam("name") String name, Model model, RedirectAttributes redirectAttributes) {
-        redirectAttributes.addFlashAttribute("name", name);
-        return "redirect:/thankyou";
-    }
+* This post request is taken from login and needs paramter name
+* and once it gets that name, it takes you to the thankyou.html page
+* @param name
+* @param model
+* @param redirectAttributes
+* @return
+*/
+   @PostMapping("/login")
+   public String loginSubmit(@RequestParam("name") String name, Model model, RedirectAttributes redirectAttributes) {
+       redirectAttributes.addFlashAttribute("name", name);
+       return "redirect:/thankyou";
+   }
 
-    @GetMapping("/thankyou")
-    public String thankyouPage() {
-        return "thankyou";
-    }
+   @GetMapping("/thankyou")
+   public String thankyouPage() {
+       return "thankyou";
+   }
 
-    @GetMapping("/index")
-    public String indexPage() {
-        return "index";
-    }
+   @GetMapping("/index")
+   public String indexPage() {
+       return "index";
+   }
 }

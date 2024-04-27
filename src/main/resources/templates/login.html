@@ -2,17 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="styleforlogin.css">
+    <style>
+        body {
+            background-color: #f2f2f2; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+            color: #333; /* Dark gray text */
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff; /* White background for form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555; /* Gray text */
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Blue button */
+            color: #fff; /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            <label for="name">Enter your name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>
