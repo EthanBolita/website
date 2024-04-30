@@ -1,15 +1,17 @@
 package com.velm.website;
 
     public class product{
-        String productName;
+        //String productName;
         double productPrice;
         String selectedSize;
         String selectedColor;
-       public product( String productName, double productPrice, String selectedSize,  String selectedColor){
-         this.productName=productName;
+        int quantity;
+       public product( /**String productName,*/ double productPrice, String selectedSize,  String selectedColor, int quantity){
+        // this.productName=productName;
          this.selectedColor=selectedColor;
          this.productPrice=productPrice;
-        this.selectedSize=selectedSize;
+         this.selectedSize=selectedSize;
+         this.quantity=quantity;
        }
        
        
@@ -29,17 +31,20 @@ package com.velm.website;
          return selectedColor;
        }
      
-       public String getType(){
+     /**   public String getType(){
          return productName;
+       }*/
+       
+       public int getquantity(){
+        return quantity;
        }
-    
      
        public String getSize(){
          return selectedSize;
        }
      
        public String toString(){
-         String item="Style: "+ productName +" Color: "+selectedColor+" Size: "+selectedSize+" Price: "+productPrice;
+         String item="Style: "+/**  productName +*/" Color: "+selectedColor+" Size: "+selectedSize+" Price: "+productPrice+ " Quantity: "+quantity;
          return item;
        }
      
