@@ -176,26 +176,44 @@
                         <option>White</option>
                         <option>Black</option>
                     </select>
-                    <input type="number" value="1">
+                    <input type="number" id="quantity" value="1">
                     <button class="cartBtn">Add to Cart</button>
+                </div>
+                
+                <script>
+                    // Define a shopping cart object
+                    var shoppingCart = {
+                        items: [],
+                        addItem: function (item) {
+                            this.items.push(item);
+                        }
+                    };
+                
+                    // Function to handle adding item to the shopping cart
+                    function shoppingCart() {
+                        var size = document.getElementById('sizes').value;
+                        var color = document.getElementById('color').value;
+                        var quantity = parseInt(document.getElementById('quantity').value);
+                
+                        // Create a new item object
+                        var newItem = {
+                            size: size,
+                            color: color,
+                            quantity: quantity
+                        };
+                
+                        // Add the item to the shopping cart
+                        shoppingCart.addToCart(newItem);
+                
+                        // You can optionally update the UI to reflect the item being added to the cart
+                        console.log("Item added to cart:", newItem);
+                    }
+                
+                    // Add click event listener to the "Add to Cart" button
+                    document.querySelector('.cartBtn').addEventListener('click', addToCart);
+                </script>
+                
                     <h4 class="prodDetails">Product Details</h4>
-                    <script>
-                        document.getElementById('cartForm').addEventListener('submit', function(event) {
-                            // Prevent the default form submission
-                            event.preventDefault();
-                    
-                            // Get selected size and color
-                            var selectedSize = document.getElementById('sizes').value;
-                            var selectedColor = document.getElementById('color').value;
-                    
-                            // Set the values of hidden input fields
-                            document.getElementById('selectedSize').value = selectedSize;
-                            document.getElementById('selectedColor').value = selectedColor;
-                    
-                            // Submit the form
-                            this.submit();
-                        });
-                    </script>
                     <span>Our medium weight crewneck with regular fit and relaxed collar are a staple for every closet. </span>
                 </div>
             </div>

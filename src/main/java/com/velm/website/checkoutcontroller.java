@@ -20,7 +20,7 @@ public class checkoutcontroller {
     public String confirmOrder(Model model, @RequestParam("address") String address,
                                @RequestParam("email") String email) {
         // Process the order confirmation
-        // You can save the order details to a database, send confirmation emails, etc.
+        
         
         // Display confirmation message with entered details
         model.addAttribute("address", address);
