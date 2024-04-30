@@ -195,7 +195,7 @@
                     };
                 
                     function updateCartUI() {
-                        var cartItemsElement = document.getElementById('cartItems');
+                        var cartItemsElement = document.getElementById('products');
                         cartItemsElement.innerHTML = ''; // Clear previous items
                 
                         shoppingCart.items.forEach(function (item) {
@@ -216,7 +216,7 @@
                             quantity: quantity
                         };
                 
-                        shoppingCart.addItem(newItem);
+                        shoppingCart.addToCart(newItem);
                     }
                 
                     document.querySelector('.cartBtn').addEventListener('click', addToCart);

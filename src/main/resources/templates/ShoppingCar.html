@@ -6,8 +6,8 @@
 
 <script>
     // Retrieve cart items from session storage
-    var cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
-    var cartItemsElement = document.getElementById('cartItems');
+    var cartItems = JSON.parse(sessionStorage.getItem('products')) || [];
+    var cartItemsElement = document.getElementById('products');
 
     // Display cart items
     cartItems.forEach(function (item) {
