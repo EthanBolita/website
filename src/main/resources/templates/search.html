@@ -18,10 +18,12 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Shop.html">Products</a></li>  
-                        <li><a href="">Contact Us</a></li> 
-                        <li><a href="">My Account</a></li>
+                        <li><a href="index" class="btn">Home</a></li>
+                        <li><a href="Shop" class="btn">Products</a></li>    
+                        <li><a href="login" class="btn">My account</a></li>
+                        <li> <div class="cart">
+                            <a href="shoppingcart"><box-icon name='shopping-bag'></box-icon></a>
+                            <span>0</span></li>
                     </ul>
                 </nav>
                 <div class="search">
@@ -30,8 +32,10 @@
                         <box-icon name='x' class="closeBtn"></box-icon>
                     </span>
                 </div>
-                <div class="searchbox">
-                    <input type="text" placeholder="Search Here...">
+                <form action="/search" method="post">
+                    <div class="searchbox">
+                        <input type="text" name="query" placeholder="Search Here...">
+                        <input type="submit" value="Search">
                 </div>
                 <div class="cart">
                     <a href="#"><box-icon name='shopping-bag'></box-icon></a>
