@@ -18,24 +18,54 @@
                     <th>Total</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Product Name</td>
-                    <td>$10.00</td>
-                    <td>
-                        <button class="quantity-btn">-</button>
-                        <span class="quantity">1</span>
-                        <button class="quantity-btn">+</button>
-                    </td>
-                    <td>$10.00</td>
-                </tr>
-                <!-- Add more rows for other products if needed -->
+            <tbody id="cartItems">
+                <!-- Cart items will be dynamically inserted here -->
             </tbody>
         </table>
         <div class="cart-total">
-            <strong>Total:</strong>
+            <strong>Total:</strong> <span id="cartTotal"></span>
         </div>
         <a href="checkout" class="btn">Checkout</a>
     </div>
+
+    <script>
+        // Fetch the cart data from the server
+        fetch('getCartServlet')
+            .then(response => response.json())
+            .then(cart => {
+                // Get the cart items and total elements
+                var cartItemsElement = document.getElementById('cartItems');
+                var cartTotalElement = document.getElementById('cartTotal');
+
+                // Clear the cart items element
+                cartItemsElement.innerHTML = '';
+
+                // Add each product in the cart to the cart items element
+                cart.products.forEach(product => {
+                    var tr = document.createElement('tr');
+
+                    var nameTd = document.createElement('td');
+                    nameTd.textContent = product.name;
+                    tr.appendChild(nameTd);
+
+                    var priceTd = document.createElement('td');
+                    priceTd.textContent = '$' + product.price.toFixed(2);
+                    tr.appendChild(priceTd);
+
+                    var quantityTd = document.createElement('td');
+                    quantityTd.textContent = product.quantity;
+                    tr.appendChild(quantityTd);
+
+                    var totalTd = document.createElement('td');
+                    totalTd.textContent = '$' + (product.price * product.quantity).toFixed(2);
+                    tr.appendChild(totalTd);
+
+                    cartItemsElement.appendChild(tr);
+                });
+
+                // Update the cart total
+                cartTotalElement.textContent = '$' + cart.total.toFixed(2);
+            });
+    </script>
 </body>
 </html>
