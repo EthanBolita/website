@@ -159,7 +159,6 @@
                 </div>
             </div>
             <div class="col-2">
-                
                 <div class="details">
                     <h6>Home / Basic T-Shirt </h6>
                     <h3 class="prodName">Basic T-Shirt</h3>
@@ -180,38 +179,50 @@
                     <button class="cartBtn">Add to Cart</button>
                 </div>
                 
+                <div class="cart">
+                    <h2>Shopping Cart</h2>
+                    <ul id="cartItems"></ul>
+                </div>
+                
                 <script>
-                    // Define a shopping cart object
                     var shoppingCart = {
                         items: [],
                         addItem: function (item) {
                             this.items.push(item);
+                            // Update cart UI
+                            updateCartUI();
                         }
                     };
                 
-                    // Function to handle adding item to the shopping cart
-                    function shoppingCart() {
+                    function updateCartUI() {
+                        var cartItemsElement = document.getElementById('cartItems');
+                        cartItemsElement.innerHTML = ''; // Clear previous items
+                
+                        shoppingCart.items.forEach(function (item) {
+                            var li = document.createElement('li');
+                            li.textContent = `${item.quantity} ${item.size} ${item.color}`;
+                            cartItemsElement.appendChild(li);
+                        });
+                    }
+                
+                    function addToCart() {
                         var size = document.getElementById('sizes').value;
                         var color = document.getElementById('color').value;
                         var quantity = parseInt(document.getElementById('quantity').value);
                 
-                        // Create a new item object
                         var newItem = {
                             size: size,
                             color: color,
                             quantity: quantity
                         };
                 
-                        // Add the item to the shopping cart
-                        shoppingCart.addToCart(newItem);
-                
-                        // You can optionally update the UI to reflect the item being added to the cart
-                        console.log("Item added to cart:", newItem);
+                        shoppingCart.addItem(newItem);
                     }
                 
-                    // Add click event listener to the "Add to Cart" button
                     document.querySelector('.cartBtn').addEventListener('click', addToCart);
                 </script>
+                
+    
                 
                     <h4 class="prodDetails">Product Details</h4>
                     <span>Our medium weight crewneck with regular fit and relaxed collar are a staple for every closet. </span>
