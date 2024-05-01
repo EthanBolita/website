@@ -9,7 +9,7 @@ public class shoppingCart {
   
 
   // Private constructor to restrict instantiation
-  private shoppingCart() {}
+  shoppingCart() {}
 
 
   // Method to get the singleton instance
@@ -79,5 +79,11 @@ public class shoppingCart {
       System.out.println(temp.printContent());
       temp.remove(item);
       System.out.println(temp.getTotal());
+    }
+
+
+    public static void addItem(product item) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addItem'");
     } 
 }
