@@ -25,9 +25,9 @@ public class ShopController {
     // Map of products and their prices
     private Map<String, String> products = new HashMap<String, String>() {{
         put("Classic Sweatpants", "$30.00");
-        put("Sweater", "$25.00");
-        put("Women's Shorts", "$30.00");
-        put("shirt", "$30.00");
+        put("Sweater", "$49.99");
+        put("Women's Shorts", "$19.99");
+        put("shirt", "$14.99");
 
     }};
 
