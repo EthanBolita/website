@@ -227,7 +227,7 @@ p{
                             <span>0</span></li>
                     </ul>
                 </nav>
-                <div class="search">
+                <div class="search"> 
                     <span class="icon">
                         <box-icon name='search-alt-2' class = "searchBtn"></box-icon>
                         <box-icon name='x' class="closeBtn"></box-icon>
@@ -310,23 +310,7 @@ p{
                     <input type="number" value="1">
                     <button class="cartBtn">Add to Cart</button>
                     <h4 class="prodDetails">Product Details</h4>
-                    <script>
-                        document.getElementById('cartForm').addEventListener('submit', function(event) {
-                            // Prevent the default form submission
-                            event.preventDefault();
-                    
-                            // Get selected size and color
-                            var selectedSize = document.getElementById('sizes').value;
-                            var selectedColor = document.getElementById('color').value;
-                    
-                            // Set the values of hidden input fields
-                            document.getElementById('selectedSize').value = selectedSize;
-                            document.getElementById('selectedColor').value = selectedColor;
-                    
-                            // Submit the form
-                            this.submit();
-                        });
-                    </script>
+                    <script src="shopping_cart.js"></script>
                     <span>Medium weight fleece shorts with two side pockets, elastic waistband, and drawstring <br>
                          closure with a short inseam that rests at the thigh. Perfect for everyday comfort and style.</span>
                 </div>

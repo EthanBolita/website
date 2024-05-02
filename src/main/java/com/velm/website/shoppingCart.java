@@ -9,7 +9,7 @@ public class shoppingCart {
   
 
   // Private constructor to restrict instantiation
-  private shoppingCart() {}
+  shoppingCart() {}
 
 
   // Method to get the singleton instance
@@ -71,13 +71,16 @@ public class shoppingCart {
       
     public static void main(String[] args) {
       shoppingCart temp=new shoppingCart();
-      product item=new product("red",19.99, "small", "shirt");
-      product item2=new product("black",24.99, "small", "pants");
+      product item=new product(19.99,"small", "red", 1);
+      product item2=new product(24.99,"small", "black", 1);
       temp.addToCart(item);
       temp.addToCart(item2);
       System.out.println(temp.getTotal());
       System.out.println(temp.printContent());
       temp.remove(item);
       System.out.println(temp.getTotal());
-    } 
+    }
+
+
+  
 }

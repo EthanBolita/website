@@ -310,33 +310,6 @@ p{
                     <input type="number" value="1">
                     <button class="cartBtn">Add to Cart</button>
                     <h4 class="prodDetails">Product Details</h4>
-                    <script>
-                        document.getElementById('cartForm').addEventListener('submit', function(event) {
-                            // Prevent the default form submission
-                            event.preventDefault();
-
-                            // Get selected size, color, and quantity
-                            var selectedSize = document.getElementById('sizes').value;
-                            var selectedColor = document.getElementById('color').value;
-                            var quantity = document.getElementById('quantity').value;
-
-                            // Make an AJAX request to your server-side script
-                            var xhr = new XMLHttpRequest();
-                            xhr.open('POST', 'addToCartServlet', true);
-                            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                            xhr.send('size=' + selectedSize + '&color=' + selectedColor + '&quantity=' + quantity);
-
-                            xhr.onload = function() {
-                                if (xhr.status === 200) {
-                                    // If the request was successful, redirect to the shopping cart page
-                                    window.location.href = 'shoppingcart.html';
-                                } else {
-                                    // Handle error
-                                    console.error('An error occurred:', xhr.responseText);
-                                }
-                            };
-                        });
-                    </script>
                     <span>These cargo style sweatpants with elastic waistband and tapered ankle are made for warmth and style.</span>
                 </div>
             </div>
