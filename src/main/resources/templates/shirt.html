@@ -164,64 +164,66 @@
                     <h6>Home / Basic T-Shirt </h6>
                     <h3 class="prodName">Basic T-Shirt</h3>
                     <h2>$14.99</h2>
-                    <select name="sizes" id="sizes">
-                        <option>Select Size</option>
-                        <option>Small</option>
-                        <option>Medium</option>
-                        <option>Large</option>
-                    </select>
-                    <select name="color" id="color">
-                        <option>Select Color</option>
-                        <option>Green</option>
-                        <option>White</option>
-                        <option>Black</option>
-                    </select>
-                    <input type="number" id="quantity" value="1">
-                    <button class="cartBtn">Add to Cart</button>
-                </div>
-                
-                <div class="cart">
-                    <h2>Shopping Cart</h2>
-                    <ul id="cartItems"></ul>
-                </div>
-                
-                <script>
-                    var shoppingCart = {
-                        items: [],
-                        addItem: function (item) {
-                            this.items.push(item);
-                            // Update cart UI
-                            updateCartUI();
-                        }
-                    };
-                
-                    function updateCartUI() {
-                        var cartItemsElement = document.getElementById('cartItems');
-                        cartItemsElement.innerHTML = ''; // Clear previous items
-                
-                        shoppingCart.items.forEach(function (item) {
-                            var li = document.createElement('li');
-                            li.textContent = `${item.quantity} ${item.size} ${item.color}`;
-                            cartItemsElement.appendChild(li);
-                        });
-                    }
-                
-                    function addToCart() {
-                        var size = document.getElementById('sizes').value;
-                        var color = document.getElementById('color').value;
-                        var quantity = parseInt(document.getElementById('quantity').value);
-                
-                        var newItem = {
-                            size: size,
-                            color: color,
-                            quantity: quantity
+                    <div class="products">
+                        <select name="sizes" id="sizes">
+                            <option>Select Size</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select>
+                        <select name="color" id="color">
+                            <option>Select Color</option>
+                            <option>Green</option>
+                            <option>White</option>
+                            <option>Black</option>
+                        </select>
+                        <input type="number" id="quantity" value="1">
+                        <button class="cartBtn">Add to Cart</button>
+                    </div>
+                    
+                    <div class="cart">
+                        <h2>Shopping Cart</h2>
+                        <ul id="cartItems"></ul>
+                    </div>
+                    
+                    <script>
+                        var shoppingCart = {
+                            items: [],
+                            addItem: function(item) {
+                                this.items.push(item);
+                                // Update cart UI
+                                updateCartUI();
+                            }
                         };
-                
-                        shoppingCart.addItem(newItem);
-                    }
-                
-                    document.querySelector('.cartBtn').addEventListener('click', addToCart);
-                </script>
+                    
+                        function updateCartUI() {
+                            var cartItemsElement = document.getElementById('cartItems');
+                            cartItemsElement.innerHTML = ''; // Clear previous items
+                    
+                            shoppingCart.items.forEach(function(item) {
+                                var li = document.createElement('li');
+                                li.textContent = `${item.quantity} ${item.size} ${item.color}`;
+                                cartItemsElement.appendChild(li);
+                            });
+                        }
+                    
+                        function addToCart() {
+                            var size = document.getElementById('sizes').value;
+                            var color = document.getElementById('color').value;
+                            var quantity = parseInt(document.getElementById('quantity').value);
+                    
+                            var newItem = {
+                                size: size,
+                                color: color,
+                                quantity: quantity
+                            };
+                    
+                            shoppingCart.addItem(newItem); // Changed from shoppingCart.addToCart(newItem)
+                        }
+                    
+                        document.querySelector('.cartBtn').addEventListener('click', addToCart);
+                    </script>
+                    
                 
     
                 
