@@ -1,35 +1,14 @@
-<!-- cart.html -->
-<div class="cart">
-    <h2>Shopping Cart</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
     <ul id="cartItems"></ul>
-</div>
 
-<script>
-    // Function to fetch cart items from the backend
-    function fetchCartItems() {
-        fetch('/get-cart-items') // Replace '/get-cart-items' with your backend endpoint
-            .then(response => response.json())
-            .then(data => {
-                displayCartItems(data);
-            })
-            .catch(error => {
-                console.error('Error fetching cart items:', error);
-            });
-    }
-
-    // Function to display cart items in the UI
-    function displayCartItems(cartItems) {
-        var cartItemsElement = document.getElementById('cartItems');
-        cartItemsElement.innerHTML = ''; // Clear previous items
-
-        cartItems.forEach(function (item) {
-            var li = document.createElement('li');
-            li.textContent = `${item.quantity} ${item.size} ${item.color}`;
-            cartItemsElement.appendChild(li);
-        });
-    }
-
-    // Fetch cart items when the page loads
-    fetchCartItems();
-</script>
-
+    <script src="cart.js"></script>
+</body>
+</html>

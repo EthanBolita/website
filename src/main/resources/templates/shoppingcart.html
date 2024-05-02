@@ -1,71 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="shoppingcart.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Shopping Cart</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody id="cartItems">
-                <!-- Cart items will be dynamically inserted here -->
-            </tbody>
-        </table>
-        <div class="cart-total">
-            <strong>Total:</strong> <span id="cartTotal"></span>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#" class="logo">VELM.co</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="btn">Home</a></li>
+                        <li><a href="shop.html" class="btn">Products</a></li> 
+                        <li><a href="login.html" class="btn">My account</a></li>
+                        <li> <a href="shoppingcart.html"><box-icon name='shopping-bag'></box-icon></a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <a href="checkout" class="btn">Checkout</a>
     </div>
-
+    
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cartItems"></ul>
+    </div>
+    
+    <script src="cart.js"></script>
     <script>
-        // Fetch the cart data from the server
-        fetch('getCartServlet')
-            .then(response => response.json())
-            .then(cart => {
-                // Get the cart items and total elements
-                var cartItemsElement = document.getElementById('cartItems');
-                var cartTotalElement = document.getElementById('cartTotal');
+        function updateCartUI() {
+            var cartItemsElement = document.getElementById('cartItems');
+            cartItemsElement.innerHTML = ''; // Clear previous items
 
-                // Clear the cart items element
-                cartItemsElement.innerHTML = '';
-
-                // Add each product in the cart to the cart items element
-                cart.products.forEach(product => {
-                    var tr = document.createElement('tr');
-
-                    var nameTd = document.createElement('td');
-                    nameTd.textContent = product.name;
-                    tr.appendChild(nameTd);
-
-                    var priceTd = document.createElement('td');
-                    priceTd.textContent = '$' + product.price.toFixed(2);
-                    tr.appendChild(priceTd);
-
-                    var quantityTd = document.createElement('td');
-                    quantityTd.textContent = product.quantity;
-                    tr.appendChild(quantityTd);
-
-                    var totalTd = document.createElement('td');
-                    totalTd.textContent = '$' + (product.price * product.quantity).toFixed(2);
-                    tr.appendChild(totalTd);
-
-                    cartItemsElement.appendChild(tr);
-                });
-
-                // Update the cart total
-                cartTotalElement.textContent = '$' + cart.total.toFixed(2);
+            shoppingCart.items.forEach(function(item) {
+                var li = document.createElement('li');
+                li.textContent = `${item.quantity} ${item.size} ${item.color}`;
+                cartItemsElement.appendChild(li);
             });
+        }
+
+        updateCartUI(); // Call the function to update cart UI when the page loads
     </script>
 </body>
 </html>
