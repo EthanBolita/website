@@ -79,8 +79,8 @@ public class shoppingCart {
       System.out.println(temp.printContent());
       temp.remove(item);
       System.out.println(temp.getTotal());
-    }
+    } 
 
 
-  
+    
 }
