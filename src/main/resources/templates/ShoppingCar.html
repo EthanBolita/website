@@ -5,14 +5,31 @@
 </div>
 
 <script>
-    // Retrieve cart items from session storage
-    var cartItems = JSON.parse(sessionStorage.getItem('products')) || [];
-    var cartItemsElement = document.getElementById('products');
+    // Function to fetch cart items from the backend
+    function fetchCartItems() {
+        fetch('/get-cart-items') // Replace '/get-cart-items' with your backend endpoint
+            .then(response => response.json())
+            .then(data => {
+                displayCartItems(data);
+            })
+            .catch(error => {
+                console.error('Error fetching cart items:', error);
+            });
+    }
 
-    // Display cart items
-    cartItems.forEach(function (item) {
-        var li = document.createElement('li');
-        li.textContent = `${item.quantity} ${item.size} ${item.color}`;
-        cartItemsElement.appendChild(li);
-    });
+    // Function to display cart items in the UI
+    function displayCartItems(cartItems) {
+        var cartItemsElement = document.getElementById('cartItems');
+        cartItemsElement.innerHTML = ''; // Clear previous items
+
+        cartItems.forEach(function (item) {
+            var li = document.createElement('li');
+            li.textContent = `${item.quantity} ${item.size} ${item.color}`;
+            cartItemsElement.appendChild(li);
+        });
+    }
+
+    // Fetch cart items when the page loads
+    fetchCartItems();
 </script>
+
