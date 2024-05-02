@@ -201,7 +201,7 @@ function updateCartUI() {
 
     shoppingCart.items.forEach(function(item) {
         var li = document.createElement('li');
-        li.textContent = `${item.quantity} ${item.size} ${item.color}`;
+        li.textContent = `${item.quantity} ${item.size} ${item.color} shirt`;
         cartItemsElement.appendChild(li);
     });
 }
