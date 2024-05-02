@@ -82,8 +82,5 @@ public class shoppingCart {
     }
 
 
-    public static void addItem(product item) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addItem'");
-    } 
+  
 }
