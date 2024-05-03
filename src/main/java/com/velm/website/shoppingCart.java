@@ -55,7 +55,7 @@ public class shoppingCart {
     /**
      * printContent method: it returns all the variables of the all
      * the products stored in the arraylist.
-     */
+
   
     public String printContent(){
       String value="";
@@ -67,7 +67,7 @@ public class shoppingCart {
       }
       return value;
     }
-  
+    */
       
     public static void main(String[] args) {
       shoppingCart temp=new shoppingCart();
@@ -76,7 +76,7 @@ public class shoppingCart {
       temp.addToCart(item);
       temp.addToCart(item2);
       System.out.println(temp.getTotal());
-      System.out.println(temp.printContent());
+      //System.out.println(temp.printContent());
       temp.remove(item);
       System.out.println(temp.getTotal());
     } 

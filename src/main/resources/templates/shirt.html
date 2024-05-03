@@ -295,59 +295,69 @@ p{
                     <h3 class="prodName">Basic T-Shirt</h3>
                     <h2>$14.99</h2>
                     <div class="products"></div>
-<select name="sizes" id="sizes">
-    <option>Select Size</option>
-    <option>Small</option>
-    <option>Medium</option>
-    <option>Large</option>
-</select>
-<select name="color" id="color">
-    <option>Select Color</option>
-    <option>Green</option>
-    <option>White</option>
-    <option>Black</option>
-</select>
-<input type="number" id="quantity" value="1">
-<button id="addToCartBtn">Add to Cart</button>
+                    <form action="/ShoppingCar" method="post">
+                        <select name="sizes" id="sizes">
+                            <option>Select Size</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select>
+                        <select name="color" id="color">
+                            <option>Select Color</option>
+                            <option>Green</option>
+                            <option>White</option>
+                            <option>Black</option>
+                        </select>
+                        <input type="number" id="quantity" value="1">
+                        <button type="submit" class="cartBtn">Add to Cart</button>
+                    </form>                
+                        <script>
+                            document.getElementById('cartBtn').addEventListener('click', function(event) {
+                            // Prevent form from being submitted
+                            event.preventDefault();
 
-<script>
-document.getElementById('addToCartBtn').addEventListener('click', function() {
-  // Get selected options
-  const size = document.getElementById('sizes').value;
-  const color = document.getElementById('color').value;
-  const quantity = document.getElementById('quantity').value;
+                            // Get selected options
+                            const size = document.getElementById('sizes').value;
+                            const color = document.getElementById('color').value;
+                            const quantity = document.getElementById('quantity').value;
+                            const price = 14.99 * quantity;
 
-  // Construct data object
-  const data = {
-    size: size,
-    color: color,
-    quantity: quantity
-  };
+                            // Construct data object
+                            const data = {
+                                size: size,
+                                color: color,
+                                quantity: quantity,
+                                price: price // Include the price in the data object
+                            };
 
-  // Send data via POST request
-  fetch('add-to-cart', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Success:', data);
-    // Optionally, handle success response
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    // Optionally, handle error
-  });
-});
-</script>
+                            // Send data via POST request
+                            fetch('/addToCart', {
+                                method: 'POST',
+                                headers: {
+                                'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(data)
+                            })
+                            .then(response => {
+                                if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                console.log('Success:', data);
+                                // Display data in the shopping cart
+                                const details = document.getElementById('details');
+                                details.innerHTML += `<li>Size: ${data.size}, Color: ${data.color}, Quantity: ${data.quantity}</li>`;
+                                // Store data in local storage
+                                localStorage.setItem('cartData', JSON.stringify(data));
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                // Optionally, handle error
+                            });
+                            });
+                            </script>
     
                 
                     <h4 class="prodDetails">Product Details</h4>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,16 @@
 </head>
 <body>
     <h1>Your Cart</h1>
-    <ul id="cartItems"></ul>
+    <ul id="details"></ul>
 
-    <script src="cart.js"></script>
+    <script>
+        // Retrieve data from local storage
+        const data = JSON.parse(localStorage.getItem('cartData'));
+        console.log(data);
+        // Display data in the shopping cart
+        const details = document.getElementById('details');
+        details.innerHTML += `<li>Size: ${data.size}, Color: ${data.color}, Quantity: ${data.quantity}</li>`;
+      </script>
+      
 </body>
 </html>
