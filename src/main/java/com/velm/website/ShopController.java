@@ -33,7 +33,7 @@ public class ShopController {
 
     @GetMapping("/Shop")
     public String shopPage() {
-        return "Shop"; 
+        return "hello"; 
     }
 
     @PostMapping("/search")

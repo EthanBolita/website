@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name ="viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+.container{
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+    position: relative;
+
+}
+svg{
+    width: 30px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+    padding: 20px 0;
+    position: relative;
+}
+header .icon-cart{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+header .icon-cart span{
+    display: inline;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+
+}
+.listProduct .item img{
+    width:90%;
+
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4);
+    gap: 20px;
+}
+.listProduct .item{
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+
+
+.listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small ;
+
+}
+.listProduct .item button{
+    background-color: black;
+    color:#eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+.cartTab{
+    width:400px;
+    background-color: black;
+    color: #eee;
+    position: fixed;
+   inset: 0 -400px 0 auto;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+
+}
+body.showCart .cartTab{
+    inset: 0 0 0 auto;
+}
+body.showCart .container{
+    transform: translate(-250px);
+
+}
+
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab .btn button{
+    background-color: yellow;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .btn .checkOut{
+    display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+}
+.cartTab .btn .checkOut:hover{
+    background-color: #0056b3;
+
+}
+.cartTab .btn .close {
+    background-color: aqua;
+}
+.carttab .listCart.item .image img{
+    max-width: 70px;
+    height: auto;
+}
+.cartTab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+}
+.listCart.item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+
+        </style>
+    
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="title">Productlist</div>
+                <div class="icon-cart">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                      </svg>
+                      <span>0</span>
+                      
+                </div>
+            
+            </header>
+            <div class="listProduct">
+                <div class="item">
+                    <img src="Images/sweats.jpg" alt ="">
+                    <h2>Sweats</h2>
+                    <div class = "price">$24.99</div>
+                    <button class="addCart">Add to Cart</button>
+
+                    <img src="Images/sweater.jpg" alt ="">
+                    <h2>Sweater</h2>
+                    <div class = "price">$49.99</div>
+                    <button class="addCart">Add to Cart</button>
+
+                    <img src="Images/shorts.jpg" alt ="">
+                    <h2>Shorts</h2>
+                    <div class = "price">$9.99</div>
+                    <button class="addCart">Add to Cart</button>
+
+                    <img src="Images/shirt.jpg" alt ="">
+                    <h2>Shirt</h2>
+                    <div class = "price">$14.99</div>
+                    <button class="addCart">Add to Cart</button>
+
+
+
+            </div>
+            </div>
+        </div>
+        <div class="cartTab">
+            <h1>Shopping Cart</h1>
+            <div class="listCart">
+            </div>
+            <div class="totalPriceContainer">
+                Total Price: <span class="totalPrice">$0.00</span>
+            </div>
+            <div class="btn">
+<button class="close">Close</button>
+<a href="checkout" class="checkOut">Checkout</a>
+
+            </div>
+            </div>
+        
+            <script>
+                // Your other JavaScript code here
+            
+                let iconCart = document.querySelector('.icon-cart');
+                let closeCart = document.querySelector('.close');
+                let body = document.querySelector('body');
+                let listProductHTML = document.querySelector('.listProduct');
+            
+                iconCart.addEventListener('click', () => {
+                    body.classList.toggle('showCart');
+                });
+            
+                closeCart.addEventListener('click', () => {
+                    body.classList.toggle('showCart');
+                });
+            
+                const addItemToCart = (productName, productPrice) => {
+                    const cartContainer = document.querySelector('.listCart');
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('item');
+                    cartItem.innerHTML = `
+                        <div class="name">${productName}</div>
+                        <div class="totalPrice">$${productPrice.toFixed(2)}</div>
+                        <div class="quantity">
+                            <span class="minus">-</span>
+                            <span>1</span>
+                            <span class="plus">+</span>
+                        </div>
+                    `;
+                    cartContainer.appendChild(cartItem);
+            
+                    // Event listeners for quantity controls
+                    const quantityDisplay = cartItem.querySelector('.quantity span:nth-child(2)');
+                    const minusButton = cartItem.querySelector('.minus');
+                    const plusButton = cartItem.querySelector('.plus');
+            
+                    minusButton.addEventListener('click', () => {
+                        let quantity = parseInt(quantityDisplay.textContent);
+                        if (quantity > 1) {
+                            quantity--;
+                            quantityDisplay.textContent = quantity;
+                            updateTotalPriceDisplay();
+                        }
+                    });
+            
+                    plusButton.addEventListener('click', () => {
+                        let quantity = parseInt(quantityDisplay.textContent);
+                        quantity++;
+                        quantityDisplay.textContent = quantity;
+                        updateTotalPriceDisplay();
+                    });
+                };
+            
+                // Add event listeners to "Add to Cart" buttons
+                const addCartButtons = document.querySelectorAll('.addCart');
+                addCartButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const productName = button.previousElementSibling.previousElementSibling.textContent.trim(); // Adjusted to retrieve product name
+                        const productPrice = parseFloat(button.previousElementSibling.textContent.replace('$', '')); // Adjusted to retrieve product price
+                        addItemToCart(productName, productPrice);
+                        updateTotalPriceDisplay();
+                    });
+                });
+            
+                // Function to calculate the total price of items in the cart
+                const calculateTotalPrice = () => {
+                    const items = document.querySelectorAll('.item');
+                    let totalPrice = 0;
+                    items.forEach(item => {
+                        const price = parseFloat(item.querySelector('.totalPrice').textContent.replace('$', ''));
+                        const quantity = parseInt(item.querySelector('.quantity span:nth-child(2)').textContent);
+                        totalPrice += price * quantity;
+                    });
+                    return totalPrice.toFixed(2);
+                };
+            
+                // Function to update the total price display
+                const updateTotalPriceDisplay = () => {
+                    const totalPriceContainer = document.querySelector('.totalPrice');
+                    const totalPrice = calculateTotalPrice();
+                    totalPriceContainer.textContent = '$' + totalPrice;
+                };
+            
+                // Call updateTotalPriceDisplay initially
+                updateTotalPriceDisplay();
+            
+            </script>
+            
+
+
+
+             
+    </body>
+</html>
