@@ -13,6 +13,10 @@ public class product {
         this.quantity = quantity;
     }
 
+    public product() {
+        //TODO Auto-generated constructor stub
+    }
+
     public double getPrice() {
         return productPrice;
     }
