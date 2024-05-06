@@ -54,8 +54,7 @@ p{
     
 }
 .header{
-    background: radial-gradient(#f95a5a,rgb(69, 69, 69)
-    );
+    background: darkgrey;
 }
 .header .row{
     margin-top: 70px;
@@ -143,6 +142,33 @@ p{
     scale: 1;
 
 }
+#search-results {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: darkgrey;
+            padding: 20px;
+            border: 1px solid darkgrey;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure search results are above other content */
+        }
+
+        .product {
+            margin-bottom: 20px; /* Add space between search results */
+        }
+
+        #search-results-header {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color:darkgrey;
+            padding: 20px;
+            border: 1px solid darkgrey;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure search results header is above other content */
+        }
 
     </style>
 </head>
@@ -176,6 +202,17 @@ p{
             </div>
         </div>
     </div>
+    <div id="search-results-header">
+        <h1>Search Results:</h1>
+    </div>
+
+    <div id="search-results">
+        <div th:each="product : ${foundProducts}" class="product">
+            <h3 th:text="${product}"></h3>
+            <p th:text="${product.value}"></p>
+            <a href="/Shop">Buy Now</a>
+        </div>
+    </div>
     <script>
         let searchBtn = document.querySelector('.searchBtn');
         let closeBtn = document.querySelector('.closeBtn');
@@ -192,13 +229,5 @@ p{
             searchBtn.classList.remove('active');
         }
     </script>
-    <h1>Search Results:</h1>
-    <div id="search-results">
-        <div th:each="product : ${foundProducts}" class="product">
-            <h3 th:text="${product}"></h3>
-            <p th:text="${product.value}"></p>
-            <a href="/Shop">Buy Now</a>
-        </div>
-    </div>
 </body>
 </html>

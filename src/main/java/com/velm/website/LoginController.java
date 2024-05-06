@@ -29,11 +29,18 @@ public class LoginController {
 * @param redirectAttributes
 * @return
 */
-   @PostMapping("/login")
-   public String loginSubmit(@RequestParam("name") String name, Model model, RedirectAttributes redirectAttributes) {
-       redirectAttributes.addFlashAttribute("name", name);
-       return "redirect:/thankyou";
-   }
+@PostMapping("/login")
+public String loginSubmit(@RequestParam("username") String username, Model model, RedirectAttributes redirectAttributes) {
+    if ("Ethan2203".equalsIgnoreCase(username) || "Vero526".equalsIgnoreCase(username)) {
+        redirectAttributes.addFlashAttribute("username", username);
+        return "redirect:/thankyou";
+    } else {
+        // Add a message to display on the login page
+        redirectAttributes.addFlashAttribute("errorMessage", "Try again");
+        return "redirect:/login"; // Redirect to the login page
+    }
+}
+
 
    @GetMapping("/thankyou")
    public String thankyouPage() {
