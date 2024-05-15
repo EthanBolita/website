@@ -1,3 +1,10 @@
+/** This is the checkoutcontroller class, which takes user to checkout page,
+ * and checks to see if information is part of what is stored.
+* @ authors: Ethan
+* @ date of oldest edition: April 29 
+* @ version: 3 
+*/
+
 package com.velm.website;
 
 import org.springframework.stereotype.Controller;
@@ -9,11 +16,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class checkoutcontroller {
 
+    
+    /** 
+     * @return String
+     */
     @GetMapping("/checkout")
     public String showCheckoutPage() {
          return "checkout";
     }
 
+    
+    /** 
+     * @param model
+     * @param @RequestParam("address"
+     * @return String
+     */
     @PostMapping("/confirm")
     public String confirmOrder(Model model, @RequestParam("address") String address,
                                @RequestParam("email") String email) {

@@ -1,7 +1,8 @@
-/** This is the LoginController class, which
+/** This is the LoginController class, which takes user to login page,
+ * and checks to see if information is part of what is stored.
 * @ authors: Ethan
-* @ date of oldest edition: April 17 
-* @ version: 2 
+* @ date of oldest edition: April 22 
+* @ version: 3 
 */
 
 
@@ -17,6 +18,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class LoginController {
 
+   
+   /** 
+    * @return String
+    */
    @GetMapping("/login")
    public String loginForm() {
        return "login";
@@ -42,6 +47,10 @@ public String loginSubmit(@RequestParam("username") String username, Model model
 }
 
 
+   
+   /** 
+    * @return String
+    */
    @GetMapping("/thankyou")
    public String thankyouPage() {
        return "thankyou";

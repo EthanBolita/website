@@ -1,3 +1,11 @@
+/**
+ * This is the product class, which creates an instance of a product
+ * and provides get methods for each attribute.
+ * @ authors: Ethan and Michael
+ * @ date of oldest edition: April 25 
+ * @ version: 3 
+ */
+
 package com.velm.website;
 
 public class product {
@@ -13,10 +21,10 @@ public class product {
         this.quantity = quantity;
     }
 
-    public product() {
-        //TODO Auto-generated constructor stub
-    }
-
+    
+    /** 
+     * @return double
+     */
     public double getPrice() {
         return productPrice;
     }

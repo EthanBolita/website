@@ -1,10 +1,10 @@
 /**
- * LoginController: This controller class takes any input from any 
- * of the buttons that reference the endpoint of login.html, once it gets that
- * request it takes you to the login.html page
- * @Ethan
- * @ 4/15
- * @ Version 2
+ * ShopController: This controller class takes any input from any 
+ * of the buttons that reference the endpoint of shop.html, once it gets that
+ * request it takes you to the shop.html page
+ * @ Ethan and Lyle
+ * @ 4/18
+ * @ Version 12
  */
 
 package com.velm.website;
@@ -31,11 +31,21 @@ public class ShopController {
 
     }};
 
+    
+    /** 
+     * @return String
+     */
     @GetMapping("/Shop")
     public String shopPage() {
         return "hello"; 
     }
 
+    
+    /** 
+     * @param query
+     * @param model
+     * @return String
+     */
     @PostMapping("/search")
     public String search(@RequestParam("query") String query, Model model) {
         // Here you can add your logic to search for the products

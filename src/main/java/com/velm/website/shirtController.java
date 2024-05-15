@@ -1,3 +1,12 @@
+/**
+ * shirtController: This controller class takes any input from any 
+ * of the buttons that reference the endpoint of shirt.html, once it gets that
+ * request it takes you to the shirt.html which shows the html page for the shirt product
+ * @Ethan and Veronica
+ * @ 4/25
+ * @ Version 2
+ */
+
 package com.velm.website;
 
 import org.springframework.stereotype.Controller;
@@ -11,10 +20,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class shirtController {
 
+    
+    /** 
+     * @return String
+     */
     @GetMapping("/shirt")
     public String shirtPage() {
         return "shirt"; 
     }
+    
+    /** 
+     * @return String
+     */
     @PostMapping("/ShoppingCar")
     public String ShoppingCar(){
         return "ShoppingCar";

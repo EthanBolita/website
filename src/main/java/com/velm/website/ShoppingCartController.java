@@ -1,8 +1,9 @@
 /**
- * This is the SweatpantsController class, which
+ * This is the shoppingCartController class, which allows the application
+ * to add products to the shopping cart
  * @ authors: Ethan
- * @ date of oldest edition: April 17 
- * @ version: 2 
+ * @ date of oldest edition: April 23 
+ * @ version: 6 
  */
 
 
@@ -19,6 +20,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class ShoppingCartController {
 
+    
+    /** 
+     * @return String
+     */
     @GetMapping("/shoppingcart")
     public String showShoppingCart() {
         return "shoppingcart"; // This will return the name of the HTML file (without the extension) to be displayed
@@ -27,6 +32,11 @@ public class ShoppingCartController {
     // In-memory representation of the shopping cart
     private List<data> shoppingCart = new ArrayList<>();
 
+    
+    /** 
+     * @param data
+     * @return String
+     */
     @PostMapping("/add-to-cart")
     public String addToCart(@RequestBody String data) {
        

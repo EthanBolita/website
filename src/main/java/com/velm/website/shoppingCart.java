@@ -1,3 +1,11 @@
+/**
+ * This is the shoppingCart class, which creates a list to store products
+ * and adds/removes them from the list.
+ * @ authors: Ethan and Michael
+ * @ date of oldest edition: April 25 
+ * @ version: 2 
+ */
+
 package com.velm.website;
 
 import java.util.ArrayList;
@@ -12,6 +20,10 @@ public class shoppingCart {
   shoppingCart() {}
 
 
+  
+  /** 
+   * @return shoppingCart
+   */
   // Method to get the singleton instance
     public static shoppingCart getInstance() {
         if (instance == null) {
@@ -53,6 +65,10 @@ public class shoppingCart {
     }
   
     
+    
+    /** 
+     * @return String
+     */
     // * printContent method: it returns all the variables of the all
      //* the products stored in the arraylist.
 
